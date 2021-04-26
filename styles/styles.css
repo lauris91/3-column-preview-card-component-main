@@ -1,3 +1,157 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
 
+:root{
+  --color-bg: hsl(0, 0%, 95%);
+  --color-sedans: hsl(31, 77%, 52%);
+  --color-suvs: hsl(184, 100%, 22%);
+  --color-luxury: hsl(179, 100%, 13%);
+}
+
+body{
+  font-family: 'Lexend Deca', 'open-sans';
+  background: var(--color-bg);
+  margin: 0px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  display: flex;
+  height: 350px;
+  margin: 0 10px;
+}
+
+.car-container{
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  padding: 30px;
+  color: var(--color-bg);
+  box-sizing: border-box;
+  justify-content:space-between;
+}
+
+.car-container .car-container__header {
+  width: 100%;
+  height: 40px;
+}
+
+.car-container .car-container__name {
+  width: 100%;
+  margin: 25px 0px;
+  font-family: 'Big Shoulders Display';
+  font-size: 30px;
+  display: block;
+}
+
+.car-container .car-container__content {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.car-container .car-container__learn-more {
+  padding: 7px 12px;
+  width: max-content;
+  background: var(--color-bg);
+  border: 1px solid var(--color-bg);
+  font-size: 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+#sedans .car-container__header {
+  background: url('../images/icon-sedans.svg') no-repeat left;
+}
+
+#sedans .car-container__learn-more {
+    color: var(--color-sedans);
+}
+
+#sedans .car-container__learn-more:hover {
+  color: var(--color-bg);
+  background: var(--color-sedans);
+  border: 1px solid var(--color-bg);
+}
+
+#suvs .car-container__header {
+  background: url('../images/icon-suvs.svg') no-repeat left;
+}
+
+#suvs .car-container__learn-more {
+    color: var(--color-suvs);
+}
+
+#suvs .car-container__learn-more:hover {
+  color: var(--color-bg);
+  background: var(--color-suvs);
+  border: 1px solid var(--color-bg);
+}
+
+#luxury .car-container__header {
+  background: url('../images/icon-luxury.svg') no-repeat left;
+}
+
+#luxury .car-container__learn-more {
+    color: var(--color-luxury);
+}
+
+#luxury .car-container__learn-more:hover {
+  color: var(--color-bg);
+  background: var(--color-luxury);
+  border: 1px solid var(--color-bg);
+}
+
+.car-container:first-child{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.car-container:last-child{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    flex-direction: column;
+  }
+  .car-container {
+    width: 100%;
+  }
+
+  .car-container:first-child{
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .car-container:last-child{
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+  }
+}
+
+#sedans {
+  background: var(--color-sedans);
+}
+
+#suvs {
+  background: var(--color-suvs);
+}
+
+#luxury {
+  background: var(--color-luxury);
 }
